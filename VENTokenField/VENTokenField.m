@@ -579,11 +579,18 @@ static const CGFloat VENTokenFieldDefaultMaxHeight          = 150.0;
         if (newString.length > delimiter.length &&
             [[newString substringFromIndex:newString.length - delimiter.length] isEqualToString:delimiter]) {
             NSString *enteredString = [newString substringToIndex:newString.length - delimiter.length];
+            if (enteredString.length == 0) {
+                break;
+            }
+            
+            if ([self.delegate respondsToSelector:@selector(tokenField:canUseDelimiter:inText:)] &&
+                ![self.delegate tokenField:self canUseDelimiter:delimiter inText:enteredString]) {
+                break;
+            }
+            
             if ([self.delegate respondsToSelector:@selector(tokenField:didEnterText:)]) {
-                if (enteredString.length) {
-                    [self.delegate tokenField:self didEnterText:enteredString];
-                    return NO;
-                }
+                [self.delegate tokenField:self didEnterText:enteredString];
+                return NO;
             }
         }
     }

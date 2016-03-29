@@ -27,6 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 @class VENTokenField;
 @protocol VENTokenFieldDelegate <NSObject>
 @optional
+- (BOOL)tokenField:(VENTokenField *)tokenField canUseDelimiter:(NSString *)delimiter inText:(NSString *)text;
 - (void)tokenField:(VENTokenField *)tokenField didEnterText:(NSString *)text;
 - (void)tokenField:(VENTokenField *)tokenField didDeleteTokenAtIndex:(NSUInteger)index;
 - (void)tokenField:(VENTokenField *)tokenField didChangeText:(nullable NSString *)text;
