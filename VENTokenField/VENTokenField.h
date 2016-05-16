@@ -43,6 +43,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (UIColor *)tokenField:(VENTokenField *)tokenField colorSchemeForTokenAtIndex:(NSUInteger)index;
 @end
 
+@class VENBackspaceTextField;
 
 @interface VENTokenField : UIView
 
@@ -77,6 +78,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (strong, nonatomic) UILabel *toLabel;
 @property (strong, nonatomic) UIScrollView *scrollView;
+@property (strong, nonatomic) VENBackspaceTextField *inputTextField;
 
 @property (strong, nonatomic, nullable) NSArray *delimiters;
 @property (copy, nonatomic, nullable) NSString *placeholderText;
