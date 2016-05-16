@@ -80,6 +80,10 @@ static const CGFloat VENTokenFieldDefaultMaxHeight          = 150.0;
     return [self.inputTextField resignFirstResponder];
 }
 
+- (void)paste:(id)sender {
+    NSLog(@"PASTE SHIT");
+}
+
 - (void)setUpInit
 {
     // Set up default values.
