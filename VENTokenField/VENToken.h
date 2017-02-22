@@ -30,7 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (copy, nonatomic, nullable) void (^didTapTokenBlock) (void);
 @property (strong, nonatomic) UIColor *colorScheme;
 
-- (void)setTitleText:(NSString *)text;
+- (void)setTitleText:(NSString *)text font:(UIFont *)font;
 
 @end
 

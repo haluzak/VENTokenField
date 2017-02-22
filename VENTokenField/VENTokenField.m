@@ -81,7 +81,6 @@ static const CGFloat VENTokenFieldDefaultMaxHeight          = 150.0;
 }
 
 - (void)paste:(id)sender {
-    NSLog(@"PASTE SHIT");
 }
 
 - (void)setUpInit
@@ -309,7 +308,7 @@ static const CGFloat VENTokenFieldDefaultMaxHeight          = 150.0;
             [weakSelf didTapToken:weakToken];
         };
 
-        [token setTitleText:[NSString stringWithFormat:@"%@,", title]];
+        [token setTitleText:[NSString stringWithFormat:@"%@,", title] font:self.inputTextField.font];
         token.colorScheme = [self colorSchemeForTokenAtIndex:i];
 
         [self.tokens addObject:token];
