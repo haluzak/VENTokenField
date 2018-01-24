@@ -35,12 +35,4 @@
     return YES;
 }
 
-- (void)paste:(id)sender {
-    if ([self.backspaceDelegate respondsToSelector:@selector(paste:)]) {
-        [self.backspaceDelegate performSelector:@selector(paste:) withObject:sender];
-    } else {
-        [super paste:sender];
-    }
-}
-
 @end
